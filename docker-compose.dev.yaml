@@ -9,7 +9,6 @@ services:
       - "4556:5173"  # порт Vite
     volumes:
       - ./client:/app
-      - /app/node_modules # чтобы локальные node_modules не перетёрлись
     depends_on:
       - server
     networks:
