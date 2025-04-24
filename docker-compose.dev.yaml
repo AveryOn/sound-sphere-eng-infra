@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  client:
+    build: 
+      context: ./client
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4556:5173"  # порт Vite
+    volumes:
+      - ./client:/app
+      - /app/node_modules # чтобы локальные node_modules не перетёрлись
+    depends_on:
+      - server
+    networks:
+      - app-network  # Добавляем подключение к сети
+
+  server:
+    build: ./server
+    ports:
+      - "4555:3000"
+    volumes:
+      - server-data:/app/data # SQLite файл будет в /app/data внутри контейнера
+    restart: always
+    networks:
+      - app-network  # Добавляем подключение к сети
+
+volumes:
+  server-data:
+
+networks:
+  app-network:  # Определяем сеть
