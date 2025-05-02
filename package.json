@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:local": "./scripts/docker-local.sh",
     "docker:dev": "./scripts/docker-dev.sh",
     "docker:prod": "./scripts/docker-prod.sh",
     "docker:stop": "./scripts/docker-stop.sh"

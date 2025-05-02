@@ -2,9 +2,11 @@ services:
   client:
     build: 
       context: ./client
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
-      - "${CLIENT_PORT}:80"  # порт Vite
+      - "${CLIENT_PORT}:5173"  # порт Vite
+    volumes:
+      - ./client:/app
     depends_on:
       - server
     networks:

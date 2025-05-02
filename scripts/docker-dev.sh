@@ -1,2 +1,6 @@
 #!/bin/bash
-docker compose -f docker-compose.dev.yaml up --build -d
+docker compose \
+  --env-file .env.dev \
+  -p dev__sound-sphere-eng \
+  -f docker-compose.dev.yaml \
+  up --build -d
