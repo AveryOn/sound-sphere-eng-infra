@@ -8,7 +8,9 @@
     "docker:local": "./scripts/docker-local.sh",
     "docker:dev": "./scripts/docker-dev.sh",
     "docker:prod": "./scripts/docker-prod.sh",
-    "docker:stop": "./scripts/docker-stop.sh"
+    "docker:local-stop": "./scripts/docker-local-stop.sh",
+    "docker:dev-stop": "./scripts/docker-dev-stop.sh",
+    "docker:prod-stop": "./scripts/docker-prod-stop.sh"
   },
   "repository": {
     "type": "git",
