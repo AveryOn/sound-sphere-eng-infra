@@ -7,6 +7,8 @@ services:
       - "${CLIENT_PORT}:5173"  # порт Vite
     volumes:
       - ./client:/app
+    env_file:
+      - ./client/.env
     depends_on:
       - server
     networks:
@@ -18,6 +20,8 @@ services:
       - "${SERVER_PORT}:3000"
     volumes:
       - server-data:/app/data # SQLite файл будет в /app/data внутри контейнера
+    env_file:
+      - ./server/.env
     restart: always
     networks:
       - app-network  # Добавляем подключение к сети
