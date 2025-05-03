@@ -5,6 +5,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "${CLIENT_PORT}:80"  # порт Vite
+    env_file:
+      - ./client/.env
     depends_on:
       - server
     networks:
@@ -16,6 +18,8 @@ services:
       - "${SERVER_PORT}:3000"
     volumes:
       - server-data:/app/data # SQLite файл будет в /app/data внутри контейнера
+    env_file:
+      - ./server/.env
     restart: always
     networks:
       - app-network  # Добавляем подключение к сети
